@@ -19,13 +19,17 @@
             <id>cyklon</id>
             <url>https://maven.mineking.dev/releases</url>
         </repository>
+        <repository>
+            <id>cyklon-snap</id>
+            <url>https://maven.mineking.dev/snapshots</url>
+        </repository>
     </repositories>
 
     <dependencies>
         <dependency>
             <groupId>de.cyklon</groupId>
             <artifactId>JUI</artifactId>
-            <version>1.0.2</version>
+            <version>7759624</version>
         </dependency>
         <dependency>
             <groupId>de.cyklon</groupId>
