@@ -2,6 +2,7 @@ package de.cyklon;
 
 import de.cyklon.jui.App;
 import de.cyklon.jui.component.UIComponent;
+import de.cyklon.jui.render.FontRenderer;
 
 import java.awt.*;
 import java.util.Map;
@@ -46,7 +47,11 @@ public class Block extends UIComponent {
         g.setColor(color);
         g.fillRect(x, y, width, height);
         g.setColor(new Color(60, 60, 60));
-        g.setFont(FONT);
-        g.drawString(String.valueOf(value), x + 25, y + 55);
+
+        FontRenderer fr = new FontRenderer(g);
+        double dig = Math.log10(value);
+        fr.setFont(FONT.deriveFont((float) (54 - dig*6)));
+        fr.setAlignment(FontRenderer.Alignment.CENTERED);
+        fr.drawString(String.valueOf(value), x + width/2, (int) (y + 55 - dig*2));
     }
 }
